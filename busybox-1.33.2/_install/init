@@ -11,4 +11,4 @@ chown 1000:1000 home/hacker
 
 echo -e "\n\n#####  Welcome to your custom kernel! #####\n"
 
-exec su - hacker -c "exec /bin/sh"
+exec /bin/sh
