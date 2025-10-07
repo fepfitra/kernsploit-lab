@@ -1,12 +1,14 @@
 #!/bin/busybox sh
 
-# Mount essential virtual filesystems
-mkdir /proc /sys /home
+mkdir /proc /sys /home /home/hacker /etc
 mount -t proc none /proc
 mount -t sysfs none /sys
 mount -t 9p -o trans=virtio,version=9p2000.L hostshare /home
 
+echo "hacker:x:1000:1000::/home/hacker:/bin/sh" >> etc/passwd
+echo "hacker:x:1000:" >> etc/group
+chown 1000:1000 home/hacker
+
 echo -e "\n\n#####  Welcome to your custom kernel! #####\n"
 
-# Drop to a shell
-exec /bin/sh
+exec su - hacker -c "exec /bin/sh"
