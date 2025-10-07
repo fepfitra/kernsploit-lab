@@ -1,0 +1,1 @@
+cmd_/home/fep/GitProject/Kernsploit2/src/hello_dev_char.ko := ld -r -m elf_x86_64  -z max-page-size=0x200000 --build-id  -T ./scripts/module-common.lds -o /home/fep/GitProject/Kernsploit2/src/hello_dev_char.ko /home/fep/GitProject/Kernsploit2/src/hello_dev_char.o /home/fep/GitProject/Kernsploit2/src/hello_dev_char.mod.o;  true

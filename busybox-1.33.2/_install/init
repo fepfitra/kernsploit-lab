@@ -1,0 +1,10 @@
+#!/bin/busybox sh
+
+# Mount essential virtual filesystems
+mount -t proc none /proc
+mount -t sysfs none /sys
+
+echo -e "\n\n#####  Welcome to your custom kernel! #####\n"
+
+# Drop to a shell
+exec /bin/sh
