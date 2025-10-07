@@ -1,9 +1,10 @@
 #!/bin/busybox sh
 
 # Mount essential virtual filesystems
-mkdir /proc /sys
+mkdir /proc /sys /home
 mount -t proc none /proc
 mount -t sysfs none /sys
+mount -t 9p -o trans=virtio,version=9p2000.L hostshare /home
 
 echo -e "\n\n#####  Welcome to your custom kernel! #####\n"
 
